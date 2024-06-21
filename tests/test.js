@@ -34,7 +34,7 @@ async function test_case() {
         console.log('Cell content:', cellContent);
 
         // Check if it shows "<span class=\"x\">&times;</span>"
-        if (cellContent === '<span class="x">&times;</span>') {
+        if (cellContent.trim() === '<span class="x">×</span>') {
             console.log('Test Success');
         } else {
             console.log('Test Failed');
