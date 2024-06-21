@@ -15,6 +15,7 @@ async function test_case() {
     try {
         //Send driver to website
         await driver.get("http://3.81.20.62/");
+        console.log('Website opened');
 
         let playButton = await driver.findElement(By.id('okBtn'));
         await playButton.click();
