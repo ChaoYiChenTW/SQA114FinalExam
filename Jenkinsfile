@@ -2,6 +2,7 @@ pipeline{
     agent { label 'aws' }
     environment{
         TOKENAWS = credentials('ec2-user-key')
+        TEST_RESULT_FILE = 'test_result.txt'
     }
     stages{ 
         stage('Deploy to Testing'){
