@@ -7,7 +7,7 @@ pipeline{
         stage('Deploy to Testing'){
             steps{
             echo 'Testing...'
-            sh 'ssh -T -oStrictHostKeyChecking=no -i "$TOKENAWS" ec2-user@3.81.20.62 " sudo dnf update; sudo dnf install git -y; sudo dnf install -y httpd; sudo systemctl start httpd; sudo rm -Rf /var/www/html/; sudo git clone https://github.com/eduval/FinalExam-Tic-Tac-Toe.git /var/www/html"'
+            sh 'ssh -T -oStrictHostKeyChecking=no -i "$TOKENAWS" ec2-user@3.81.20.62 " sudo dnf update; sudo dnf install git -y; sudo dnf install -y httpd; sudo systemctl start httpd; sudo rm -Rf /var/www/html/; sudo git clone https://github.com/ChaoYiChenTW/SQA114FinalExam.git /var/www/html"'
             script {
                 try {
                     // Install Node.js
@@ -42,7 +42,7 @@ pipeline{
             }
             steps{
             echo 'Staging...'
-            sh 'ssh -T -oStrictHostKeyChecking=no -i "$TOKENAWS" ec2-user@3.80.181.19 " sudo dnf update; sudo dnf install git -y; sudo dnf install -y httpd; sudo systemctl start httpd; sudo rm -Rf /var/www/html/; sudo git clone https://github.com/eduval/FinalExam-Tic-Tac-Toe.gite /var/www/html"'
+            sh 'ssh -T -oStrictHostKeyChecking=no -i "$TOKENAWS" ec2-user@3.80.181.19 " sudo dnf update; sudo dnf install git -y; sudo dnf install -y httpd; sudo systemctl start httpd; sudo rm -Rf /var/www/html/; sudo git clone https://github.com/ChaoYiChenTW/SQA114FinalExam.git /var/www/html"'
             }
         }
         stage('Deploy to Production_Env1'){
@@ -54,7 +54,7 @@ pipeline{
             }
             steps{
             echo 'Production Env1...'
-            sh 'ssh -T -oStrictHostKeyChecking=no -i "$TOKENAWS" ec2-user@44.220.147.204 " sudo dnf update; sudo dnf install git -y; sudo dnf install -y httpd; sudo systemctl start httpd; sudo rm -Rf /var/www/html/; sudo git clone https://github.com/eduval/FinalExam-Tic-Tac-Toe.git /var/www/html"'
+            sh 'ssh -T -oStrictHostKeyChecking=no -i "$TOKENAWS" ec2-user@44.220.147.204 " sudo dnf update; sudo dnf install git -y; sudo dnf install -y httpd; sudo systemctl start httpd; sudo rm -Rf /var/www/html/; sudo git clone https://github.com/ChaoYiChenTW/SQA114FinalExam.git /var/www/html"'
             }
         }
         stage('Deploy to Production_Env2'){
@@ -66,7 +66,7 @@ pipeline{
             }
             steps{
             echo 'Production Env2...'
-            sh 'ssh -T -oStrictHostKeyChecking=no -i "$TOKENAWS" ec2-user@54.164.117.233 " sudo dnf update; sudo dnf install git -y; sudo dnf install -y httpd; sudo systemctl start httpd; sudo rm -Rf /var/www/html/; sudo git clone https://github.com/eduval/FinalExam-Tic-Tac-Toe.git /var/www/html"'
+            sh 'ssh -T -oStrictHostKeyChecking=no -i "$TOKENAWS" ec2-user@54.164.117.233 " sudo dnf update; sudo dnf install git -y; sudo dnf install -y httpd; sudo systemctl start httpd; sudo rm -Rf /var/www/html/; sudo git clone https://github.com/ChaoYiChenTW/SQA114FinalExam.git /var/www/html"'
             }
         }
     }
