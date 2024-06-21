@@ -29,6 +29,7 @@ pipeline{
                 } catch (Exception e) {
                     echo "Test failed: ${e.message}"
                     writeFile file: env.TEST_RESULT_FILE, text: 'false'
+                }
             }
             }
         }
@@ -69,5 +70,4 @@ pipeline{
             }
         }
     }
-}
 }
