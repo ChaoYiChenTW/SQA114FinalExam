@@ -16,9 +16,14 @@ async function test_case() {
         //Send driver to website
         await driver.get("http://3.81.20.62/");
 
+        let playButton = await driver.findElement(By.id('okBtn'));
+        await playButton.click();
+        console.log('Play button clicked');
+
         // Find and click on a cell
-        let cell = await driver.findElement(By.className('td_game'));
+        let cell = await driver.findElement(By.id('cell0'));
         await cell.click();
+        console.log('Cell clicked');
 
         // Wait for a brief moment to ensure the update is reflected (adjust as necessary)
         await driver.sleep(1000);

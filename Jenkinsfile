@@ -10,8 +10,6 @@ pipeline{
             sh 'ssh -T -oStrictHostKeyChecking=no -i "$TOKENAWS" ec2-user@3.81.20.62 " sudo dnf update; sudo dnf install git -y; sudo dnf install -y httpd; sudo systemctl start httpd; sudo rm -Rf /var/www/html/; sudo git clone https://github.com/ChaoYiChenTW/SQA114FinalExam.git /var/www/html"'
             script {
                 try {
-                    // Install npm packages
-                    sh 'npm install chromedriver'
                     sh 'npm install selenium-webdriver'
 
                     def output = sh(script: 'node tests/test.js', returnStdout: true).trim()
