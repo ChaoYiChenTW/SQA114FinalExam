@@ -10,10 +10,6 @@ pipeline{
             sh 'ssh -T -oStrictHostKeyChecking=no -i "$TOKENAWS" ec2-user@3.81.20.62 " sudo dnf update; sudo dnf install git -y; sudo dnf install -y httpd; sudo systemctl start httpd; sudo rm -Rf /var/www/html/; sudo git clone https://github.com/ChaoYiChenTW/SQA114FinalExam.git /var/www/html"'
             script {
                 try {
-                    // Install Node.js
-                    sh 'curl -sL https://rpm.nodesource.com/setup_14.x | sudo bash -'
-                    sh 'sudo dnf install -y nodejs'
-
                     // Install npm packages
                     sh 'npm install chromedriver'
                     sh 'npm install selenium-webdriver'
